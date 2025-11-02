@@ -1,3 +1,8 @@
+/**
+ * Star Wars App - Main Application Component
+ * Bottom Tab Navigator for iOS & Web and Drawer Navigator for Android
+*/
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
