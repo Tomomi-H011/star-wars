@@ -1,7 +1,10 @@
+// components/List.js
+// Displays a list of items, shows loading and error states
+
 import React from "react";
 import PropType from "prop-types";
 import {Text, FlatList, View, ActivityIndicator, Button, TouchableOpacity} from "react-native";
-import styles from "./styles";
+import styles from "../styles";
 
 export default function List({data, fetchData, loading, error}) {
     if (loading) {

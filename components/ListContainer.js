@@ -1,3 +1,6 @@
+// components/ListContainer.js
+// Fetches data from Star Wars API and passes it to List component
+
 import React, {useState, useEffect} from 'react';
 import List from './List';
 
