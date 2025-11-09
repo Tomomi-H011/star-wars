@@ -13,8 +13,8 @@ export default function Planets() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <SearchBox />
-      <ListContainer apiEndpoint="planets" />
+      <SearchBox />      
+        <ListContainer apiEndpoint="planets" />
     </View>
   );
 }

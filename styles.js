@@ -4,21 +4,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-  },
-  buttonText: {
-    fontSize: 18,
-    padding: 10,
-    color: "blue",
-    backgroundColor: "lightgray",
-    marginVertical: 8,
-    textAlign: "center",
-    alignSelf: 'center',
-    width: '80%',
-  },
-  list: {
-    paddingTop: 20,
-    width: '100%',
+    justifyContent: "flex-start",
   },
   searchBoxContainer: {
     paddingTop: 20,
@@ -52,9 +38,68 @@ export default StyleSheet.create({
   },
   modalText: {
     fontSize: 20,
+    paddingStart: 10,
     paddingBottom: 20,
+    flexWrap: 'wrap',
   },
   modalButton: {
     marginTop: 10,
+  },
+  scroll: {
+    flex: 1,
+    width: '100%',
+  },
+  list: {
+    paddingTop: 20,
+    width: '100%',
+  },
+  listContent: {
+    alignItems: 'center',
+    width: '100%',
+  },
+  swipeContainer: {
+    flexDirection: 'row',
+    minWidth: '80%',
+    marginHorizontal: '10%',
+    height: 50,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginVertical: 8,
+    // backgroundColor: 'red', //testing purpose
+  },
+  swipeItemTouchable: {
+    width: '100%',
+    justifyContent: 'center',
+  },
+  swipeItem: {
+    width: '100%',
+    minHeight: 50,
+    paddingHorizontal: 20,
+    backgroundColor: 'lightgray',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
+  swipeItemText: {
+    fontSize: 18,
+    color: 'blue',
+    paddingHorizontal: 10,
+    // textAlign: 'center',
+    justifyContent: 'center',
+  },
+  swipeBlank: {
+    width: 10, 
+    minHeight: 60, 
+    backgroundColor: 'transparent',
+  },
+  swipeScrollView: {
+    width: '100%',
+    alignContent: 'center',
+  },
+  swipeScrollContent: {
+    width: '100%',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

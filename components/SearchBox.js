@@ -13,7 +13,6 @@ export default function SearchBox() {
   return (
     <View style={styles.searchBoxContainer}>
       <TextInput 
-        autoFocus
         style={styles.searchInput} 
         placeholder="Search..."
         onChangeText={setFilter}
