@@ -61,10 +61,10 @@ export default StyleSheet.create({
     flexDirection: 'row',
     minWidth: '80%',
     marginHorizontal: '10%',
-    height: 50,
+    height: 55,
     justifyContent: 'center',
     alignSelf: 'center',
-    marginVertical: 8,
+    marginVertical: 15,
     // backgroundColor: 'red', //testing purpose
   },
   swipeItemTouchable: {
