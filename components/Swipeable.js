@@ -9,7 +9,7 @@ export default function Swipeable({ onSwipe, displayText }) {
   const [modalVisible, setModalVisible] = useState(false);
   const scrollViewRef = useRef(null);
   
-  // Trigger onSwipe function when user swipes - using textbook approach
+  // Trigger onSwipe function when user swipes
   function onScroll(e) {
     if (e.nativeEvent.contentOffset.x >= 200) {
       setModalVisible(true);
