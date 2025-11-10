@@ -72,12 +72,11 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   swipeItem: {
-    width: '100%',
+    width: 200,
     minHeight: 50,
     paddingHorizontal: 20,
     backgroundColor: 'lightgray',
     justifyContent: 'center',
-    alignSelf: 'center',
     alignItems: 'center',
   },
   swipeItemText: {
@@ -88,7 +87,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   swipeBlank: {
-    width: 10, 
+    width: 200, 
     minHeight: 60, 
     backgroundColor: 'transparent',
   },

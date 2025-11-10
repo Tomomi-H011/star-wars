@@ -8,14 +8,9 @@ import styles from "../styles";
 export default function Swipeable({ onSwipe, displayText }) {
   const [modalVisible, setModalVisible] = useState(false);
   
-  // Trigger onSwipe function when user swipes to reveal blank area
+  // Trigger onSwipe function when user swipes - using textbook approach
   function onScroll(e) {
-    const containerWidth = e.nativeEvent.layoutMeasurement.width;
-    const scrollOffset = e.nativeEvent.contentOffset.x;
-
-    const swipeThreshold = containerWidth * 0.1; // 10% of container width
-    
-    if (scrollOffset >= swipeThreshold) {
+    if (e.nativeEvent.contentOffset.x >= 200) {
       setModalVisible(true);
       onSwipe && onSwipe(); // Call the passed onSwipe callback if provided
     }
