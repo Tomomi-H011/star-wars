@@ -59,20 +59,17 @@ export default StyleSheet.create({
   },
   swipeContainer: {
     flexDirection: 'row',
-    minWidth: '80%',
-    marginHorizontal: '10%',
+    width: 300,
     height: 55,
-    justifyContent: 'center',
     alignSelf: 'center',
     marginVertical: 15,
     // backgroundColor: 'red', //testing purpose
   },
   swipeItemTouchable: {
-    width: '100%',
-    justifyContent: 'center',
+    width: 300,
   },
   swipeItem: {
-    width: 200,
+    width: 300,
     minHeight: 50,
     paddingHorizontal: 20,
     backgroundColor: 'lightgray',
@@ -92,13 +89,10 @@ export default StyleSheet.create({
     backgroundColor: 'transparent',
   },
   swipeScrollView: {
-    width: '100%',
-    alignContent: 'center',
+    width: 200,
   },
   swipeScrollContent: {
-    width: '100%',
-    alignContent: 'center',
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
   },
 });

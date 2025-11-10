@@ -1,12 +1,13 @@
 // components/Swipeable.js
 // Swipeable component with modal dialog on swipe
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { View, ScrollView, Text, TouchableOpacity, Modal, Button } from "react-native";
 import styles from "../styles";
 
 export default function Swipeable({ onSwipe, displayText }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const scrollViewRef = useRef(null);
   
   // Trigger onSwipe function when user swipes - using textbook approach
   function onScroll(e) {
@@ -29,7 +30,7 @@ export default function Swipeable({ onSwipe, displayText }) {
 
   return (
     <View style={styles.swipeContainer}>
-      <ScrollView {...scrollProps}>
+      <ScrollView {...scrollProps} ref={scrollViewRef}>
         <TouchableOpacity style={styles.swipeItemTouchable}>
           <View style={styles.swipeItem}>
             <Text style={styles.swipeItemText}>{displayText}</Text>
@@ -45,7 +46,10 @@ export default function Swipeable({ onSwipe, displayText }) {
             <Button 
                 style={styles.modalButton}
                 title="Close" 
-                onPress={() => setModalVisible(false)} 
+                onPress={() => {
+                  setModalVisible(false);
+                  scrollViewRef.current?.scrollTo({ x: 0, animated: true });
+                }} 
             />
             </View>
         </Modal>
