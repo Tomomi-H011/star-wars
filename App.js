@@ -15,6 +15,7 @@ import styles from "./styles";
 import Background from "./components/Background";
 import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -75,7 +76,11 @@ export default function App() {
             header: (props) => <CustomHeader {...props} />, // Display logo header above title & nav
             headerStyle: { backgroundColor: 'transparent' },
             headerTitleStyle: { color: 'silver', padding: 15 },
+            headerLeft: () => (
+              <Ionicons name="menu" size={28} color="silver" style={{ marginLeft: 15 }} />
+            ),
             drawerStyle: {
+              color: 'silver',
               backgroundColor: 'transparent',
               borderWidth: 0,
               elevation: 0,
