@@ -1,22 +1,54 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
+import { Platform } from 'react-native';
 
 export default StyleSheet.create({
+
+  NavigationContainer: {
+    backgroundColor: 'black',
+  },
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
+    backgroundColor: "transparent",
+  },customHeaderContainer: {
+    width: '100%',
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoHeaderContainer: {
+    width: '100%',
+    height: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    paddingTop: 35,
+  },
+  headerTitleStyle: {
+    color: 'silver',
+    fontSize:25,
+    fontWeight: 'bold',
+    marginTop: 25,
   },
   searchBoxContainer: {
-    paddingTop: 20,
+    paddingTop: 30,
     width: '100%',
     alignSelf: 'center',
+    backgroundColor: 'transparent',
   },
   searchInput: {
-    height: 40,
+    height: 50,
     width: '80%',
-    backgroundColor: 'white',
-    borderColor: 'gray',
-    borderWidth: 1,
+    color: 'silver',
+    fontWeight: 'bold',
+    fontSize: 20,
+    backgroundColor: 'transparent',
+    opacity: 0.7,
+    borderRadius: 5,
+    borderColor: 'silver',
+    borderWidth: 1.5,
     alignSelf: 'center',   
     paddingInline: 10, 
   },
@@ -27,11 +59,10 @@ export default StyleSheet.create({
     marginTop: '40%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: 'darkgray',
   },
   modalContent: {
     width: '80%',
-    backgroundColor: 'white',
     padding: 20,
     borderRadius: 10,
     alignItems: 'center',
@@ -50,35 +81,55 @@ export default StyleSheet.create({
     width: '100%',
   },
   list: {
-    paddingTop: 20,
+    paddingTop: 30,
+    paddingBottom: 130,
     width: '100%',
   },
   listContent: {
     alignItems: 'center',
     width: '100%',
+    paddingLeft: 25,
   },
   swipeContainer: {
     flexDirection: 'row',
-    width: 300,
-    height: 55,
+    width: 450,
+    height: 95,
+    paddingHorizontal: 10,
     alignSelf: 'center',
-    marginVertical: 15,
-    // backgroundColor: 'red', //testing purpose
+    justifyContent: 'right',
+    marginVertical: 25,
+    backgroundColor: 'transparent', 
   },
   swipeItemTouchable: {
-    width: 300,
+    width: 450,
+    paddingLeft: 20,
+    justifyContent: 'center',
   },
   swipeItem: {
-    width: 300,
-    minHeight: 50,
-    paddingHorizontal: 20,
-    backgroundColor: 'lightgray',
-    justifyContent: 'center',
-    alignItems: 'center',
+  width: 380,
+  minHeight: 50,
+  borderRadius: 50,
+  borderWidth: 1.5,
+  paddingHorizontal: 10,
+  justifyContent: 'center',
+  alignItems: 'center',
+  opacity: 0.8,
+  // Override shaddow with animation
+  // borderColor: '#be0affdb',
+  // backgroundColor: '#c5b3d1ff',
+  shadowColor: '#be0affdb',
+  shadowOffset: { width: 5, height: 5 },
+  shadowOpacity: 1,
+  shadowRadius: 50,
+
+  elevation: 10,
+
+  boxShadow: '5px 5px 50px #be0affdb',
   },
   swipeItemText: {
-    fontSize: 18,
-    color: 'blue',
+    fontSize: 22,
+    color: '#330d6fff',
+    fontWeight: 'bold',
     paddingHorizontal: 10,
     // textAlign: 'center',
     justifyContent: 'center',
@@ -95,4 +146,5 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  
 });

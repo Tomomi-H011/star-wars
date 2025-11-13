@@ -7,13 +7,18 @@ import React from "react";
 import styles from "../styles";
 import ListContainer from "../components/ListContainer";
 import SearchBox from "../components/SearchBox";
+import Background from "../components/Background";
 
 export default function Films() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
-      <SearchBox />
-      <ListContainer apiEndpoint="films" />
-    </SafeAreaView>
+    <View style={{ flex: 1 }}>
+      <Background>
+        <SafeAreaView style={styles.container}>
+          <StatusBar style="dark" />
+          <SearchBox />
+          <ListContainer apiEndpoint="films" />
+        </SafeAreaView>
+      </Background>
+    </View>
   );
 }

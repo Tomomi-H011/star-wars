@@ -7,13 +7,18 @@ import React from "react";
 import styles from "../styles";
 import SearchBox from "../components/SearchBox";
 import ListContainer from "../components/ListContainer";
+import Background from "../components/Background";
 
 export default function Spaceships() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
-      <SearchBox />
-      <ListContainer apiEndpoint="starships/" />
-    </SafeAreaView>
+    <View style={{ flex: 1 }}>
+      <Background>
+        <SafeAreaView style={styles.container}>
+          <StatusBar style="dark" />
+          <SearchBox />
+          <ListContainer apiEndpoint="starships/" />
+        </SafeAreaView>
+      </Background>
+    </View>
   );
 }
