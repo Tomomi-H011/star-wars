@@ -15,6 +15,7 @@ export default function SearchBox() {
       <TextInput 
         style={styles.searchInput} 
         placeholder="Search..."
+        placeholderTextColor={'silver'}
         onChangeText={setFilter}
         onSubmitEditing={() => setModalVisible(true)}
       />
