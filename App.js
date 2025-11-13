@@ -13,7 +13,6 @@ import Spaceships from "./screens/Spaceships";
 import LogoHeader from "./components/LogoHeader";
 import styles from "./styles";
 import Background from "./components/Background";
-import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 
