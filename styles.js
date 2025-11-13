@@ -28,9 +28,11 @@ export default StyleSheet.create({
   },
   headerTitleStyle: {
     color: 'silver',
-    fontSize:25,
+    fontFamily: 'Orbitron',
+    fontSize:28,
     fontWeight: 'bold',
     marginTop: 25,
+    paddingBottom: 10,
   },
   searchBoxContainer: {
     paddingTop: 30,
@@ -42,6 +44,7 @@ export default StyleSheet.create({
     height: 50,
     width: '80%',
     color: 'silver',
+    fontFamily: 'Orbitron',
     fontWeight: 'bold',
     fontSize: 20,
     backgroundColor: 'transparent',
@@ -92,7 +95,7 @@ export default StyleSheet.create({
   },
   swipeContainer: {
     flexDirection: 'row',
-    width: 450,
+    width: 470,
     height: 95,
     paddingHorizontal: 10,
     alignSelf: 'center',
@@ -101,12 +104,12 @@ export default StyleSheet.create({
     backgroundColor: 'transparent', 
   },
   swipeItemTouchable: {
-    width: 450,
+    width: 470,
     paddingLeft: 20,
     justifyContent: 'center',
   },
   swipeItem: {
-  width: 380,
+  width: 400,
   minHeight: 50,
   borderRadius: 50,
   borderWidth: 1.5,
@@ -127,6 +130,7 @@ export default StyleSheet.create({
   boxShadow: '5px 5px 50px #be0affdb',
   },
   swipeItemText: {
+    fontFamily: 'Orbitron',
     fontSize: 22,
     color: '#330d6fff',
     fontWeight: 'bold',

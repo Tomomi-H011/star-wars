@@ -13,6 +13,8 @@ import Spaceships from "./screens/Spaceships";
 import LogoHeader from "./components/LogoHeader";
 import styles from "./styles";
 import Background from "./components/Background";
+import * as Font from 'expo-font';
+import { useFonts } from 'expo-font';
 
 
 
@@ -33,6 +35,14 @@ function CustomHeader({ route, options }) {
 
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Orbitron': require('./assets/fonts/Orbitron-VariableFont_wght.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <Background>
     <NavigationContainer style={styles.NavigationContainer}>
