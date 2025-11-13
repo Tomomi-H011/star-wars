@@ -35,7 +35,7 @@ export default function Swipeable({ onSwipe, displayText }) {
     return {
       borderColor: interpolateColor(borderColor.value, [0, 1], ['#be0affdb', '#6205f8ff']),
       backgroundColor: interpolateColor(backgroundColor.value, [0, 1], ['#c5b3d1ff', '#7e36f2ff']),
-      opacity: interpolate(opacity.value, [0, 1], [0.8, 1]),
+      opacity: interpolate(opacity.value, [0, 1], [1, 1]),
       // shadowColor: interpolateColor(shadowColor.value, [0, 1], ['#be0affdb', 'red']),
       // shadowOffset,
       // shadowOpacity,

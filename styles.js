@@ -12,7 +12,8 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: "transparent",
-  },customHeaderContainer: {
+  },
+  customHeaderContainer: {
     width: '100%',
     backgroundColor: 'black',
     alignItems: 'center',
@@ -32,10 +33,10 @@ export default StyleSheet.create({
     fontSize:28,
     fontWeight: 'bold',
     marginTop: 25,
-    paddingBottom: 10,
+    paddingBottom: 15,
   },
   searchBoxContainer: {
-    paddingTop: 30,
+    paddingTop: 5,
     width: '100%',
     alignSelf: 'center',
     backgroundColor: 'transparent',
@@ -47,8 +48,8 @@ export default StyleSheet.create({
     fontFamily: 'Orbitron',
     fontWeight: 'bold',
     fontSize: 20,
-    backgroundColor: 'transparent',
-    opacity: 0.7,
+    backgroundColor: '#3a393bdb',
+    opacity: 0.6,
     borderRadius: 5,
     borderColor: 'silver',
     borderWidth: 1.5,
@@ -95,7 +96,7 @@ export default StyleSheet.create({
   },
   swipeContainer: {
     flexDirection: 'row',
-    width: 320,
+    width: 340,
     height: 95,
     paddingHorizontal: 5,
     alignSelf: 'center',
@@ -105,7 +106,7 @@ export default StyleSheet.create({
   },
   swipeItemTouchable: {
     width: 300,
-    paddingLeft: 15,
+    paddingLeft: 30,
     justifyContent: 'center',
   },
   swipeItem: {
@@ -121,9 +122,9 @@ export default StyleSheet.create({
   // borderColor: '#be0affdb',
   // backgroundColor: '#c5b3d1ff',
   shadowColor: '#be0affdb',
-  shadowOffset: { width: 5, height: 5 },
+  shadowOffset: { width: 1, height: 1 },
   shadowOpacity: 1,
-  shadowRadius: 50,
+  shadowRadius: 10,
 
   elevation: 10,
 
@@ -135,16 +136,16 @@ export default StyleSheet.create({
     color: '#330d6fff',
     fontWeight: 'bold',
     paddingHorizontal: 10,
-    // textAlign: 'center',
+    textAlign: 'center',
     justifyContent: 'center',
   },
   swipeBlank: {
-    width: 200, 
+    width: 260, 
     minHeight: 60, 
     backgroundColor: 'transparent',
   },
   swipeScrollView: {
-    width: 200,
+    width: 260,
   },
   swipeScrollContent: {
     flexDirection: 'row',

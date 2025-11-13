@@ -46,11 +46,9 @@ export default function App() {
 
   return (
     <Background>
-    <NavigationContainer style={styles.NavigationContainer}>
-
-      {Platform.OS === "ios" && (
+      <NavigationContainer style={styles.NavigationContainer}>
         <Tab.Navigator
-          screenOptions={{
+          screenOptions={({ route }) => ({
             header: (props) => <CustomHeader {...props} />, // Display logo header above title & nav
             headerStyle: { backgroundColor: 'transparent' },
             headerTitleStyle: { color: 'silver', padding: 15 },
@@ -62,66 +60,27 @@ export default function App() {
             },
             tabBarActiveTintColor: 'silver',
             tabBarInactiveTintColor: 'gray',
-          }}
+            tabBarIcon: ({focused, color, size}) => {
+              let iconName;
+              if (route.name === 'Planets') {
+                iconName = focused ? 'planet' : 'planet-outline';
+              }
+              else if (route.name === 'Films') {
+                iconName = focused ? 'film' : 'film-outline';
+              }
+              else if (route.name === 'Spaceships') {
+                iconName = focused ? 'rocket' : 'rocket-outline';
+              }
+              return <Ionicons name={iconName} size={size} color={color} />;
+            }
+          })}
         >
           <Tab.Screen name="Planets" component={Planets} />
           <Tab.Screen name="Films" component={Films} />
           <Tab.Screen name="Spaceships" component={Spaceships} />
         </Tab.Navigator>  
-      )}
-
-      {Platform.OS === "android" && (
-        <Drawer.Navigator
-          screenOptions={{
-            header: (props) => <CustomHeader {...props} />, // Display logo header above title & nav
-            headerStyle: { backgroundColor: 'transparent' },
-            headerTitleStyle: { color: 'silver', padding: 15 },
-            headerLeft: () => (
-              <Ionicons name="menu" size={28} color="silver" style={{ marginLeft: 15 }} />
-            ),
-            drawerStyle: {
-              color: 'silver',
-              backgroundColor: 'transparent',
-              borderWidth: 0,
-              elevation: 0,
-              boxShadow: 'none',
-            },
-            drawerActiveTintColor: 'silver',
-            drawerInactiveTintColor: 'gray',
-            drawerLabelStyle: { color: 'silver' },
-          }}
-        >
-          <Drawer.Screen name="Planets" component={Planets} />
-          <Drawer.Screen name="Films" component={Films} />
-          <Drawer.Screen name="Spaceships" component={Spaceships} />
-        </Drawer.Navigator>
-      )}
-
-      {Platform.OS === "web" && (
-        <Tab.Navigator
-          screenOptions={{
-            header: (props) => <CustomHeader {...props} />, // Display logo header above title & nav
-            headerStyle: { backgroundColor: 'transparent' },
-            headerTitleStyle: { color: 'silver', padding: 15 },
-            tabBarStyle: {
-              backgroundColor: 'transparent',
-              borderWidth: 0,
-              elevation: 0,
-              boxShadow: 'none',
-            },
-            tabBarActiveTintColor: 'silver',
-            tabBarInactiveTintColor: 'gray',
-          }}
-        >
-          <Tab.Screen name="Planets" component={Planets} />
-          <Tab.Screen name="Films" component={Films} />
-          <Tab.Screen name="Spaceships" component={Spaceships} />
-        </Tab.Navigator>
-      )}
-
-    </NavigationContainer>
+      </NavigationContainer>
     </Background>
-
   );
 }
 
