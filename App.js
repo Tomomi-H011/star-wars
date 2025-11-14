@@ -15,6 +15,7 @@ import styles from "./styles";
 import Background from "./components/Background";
 import { useFonts } from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
+import NetworkStatus from "./components/NetworkStatus";
 
 
 
@@ -45,6 +46,7 @@ export default function App() {
 
   return (
     <Background>
+      <NetworkStatus />
       <NavigationContainer style={styles.NavigationContainer}>
         <Tab.Navigator
           screenOptions={({ route }) => ({
