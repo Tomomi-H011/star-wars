@@ -14,7 +14,7 @@ const connectedMap = {
     wifi: "Connected",
 }
 
-export default function NetworkStatus() {
+export default function NetworkStatus({children}) {
     const [connected, setConnected] = useState("");
 
     
@@ -32,9 +32,14 @@ export default function NetworkStatus() {
     };
     }, []);
 
-return (
-    <View style={styles.networkStatusContainer}>
-        <Text style={styles.networkStatusText}>{connected}</Text>
-    </View>
-);
+    // Only show message when not connected
+    if (connected === 'none' || connected === 'unknown') {
+        return (
+        <View style={styles.networkStatusContainer}>
+            <Text style={styles.networkStatusText}>{connected}</Text>
+        </View>
+        );
+    } else {
+        return children || null;
+    }
 }

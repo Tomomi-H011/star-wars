@@ -151,5 +151,19 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  
+  networkStatusContainer: {
+    width: '100%',
+    height: 400,
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  networkStatusText: {
+    color: 'silver',
+    fontFamily: 'Orbitron',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 150,
+    marginHorizontal: 35,
+  }
 });

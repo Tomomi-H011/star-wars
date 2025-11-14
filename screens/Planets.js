@@ -11,14 +11,15 @@ import ListContainer from "../components/ListContainer";
 import SearchBox from "../components/SearchBox";
 import LogoHeader from '../components/LogoHeader';
 import Background from "../components/Background";
+import NetworkStatus from "../components/NetworkStatus";
 
 export default function Planets() {
   return (
     <View style={{ flex: 1 }}>
       <Background>
         <SafeAreaView style={styles.container}>
-          <StatusBar style="dark" />
-          <SearchBox />      
+          <StatusBar style="auto" />
+          <SearchBox />
           <ListContainer apiEndpoint="planets" />
       </SafeAreaView>
     </Background>

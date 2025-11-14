@@ -14,7 +14,7 @@ export default function Spaceships() {
     <View style={{ flex: 1 }}>
       <Background>
         <SafeAreaView style={styles.container}>
-          <StatusBar style="dark" />
+          <StatusBar style="auto" />
           <SearchBox />
           <ListContainer apiEndpoint="starships/" />
         </SafeAreaView>

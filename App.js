@@ -46,7 +46,7 @@ export default function App() {
 
   return (
     <Background>
-      <NetworkStatus />
+      <NetworkStatus>
       <NavigationContainer style={styles.NavigationContainer}>
         <Tab.Navigator
           screenOptions={({ route }) => ({
@@ -81,6 +81,7 @@ export default function App() {
           <Tab.Screen name="Spaceships" component={Spaceships} />
         </Tab.Navigator>  
       </NavigationContainer>
+      </NetworkStatus>
     </Background>
   );
 }
