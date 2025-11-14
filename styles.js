@@ -153,17 +153,17 @@ export default StyleSheet.create({
   },
   networkStatusContainer: {
     width: '100%',
-    height: 400,
-    backgroundColor: 'red',
+    height: 220,
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
   networkStatusText: {
     color: 'silver',
     fontFamily: 'Orbitron',
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 150,
+    marginTop: 60,
     marginHorizontal: 35,
   }
 });

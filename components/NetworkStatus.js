@@ -16,11 +16,13 @@ const connectedMap = {
 
 export default function NetworkStatus({children}) {
     const [connected, setConnected] = useState("");
+    const [connectionType, setConnectionType] = useState("");
 
     
     useEffect(() => {
         function onNetworkChange(connection) {
             setConnected(connectedMap[connection.type]);
+            setConnectionType(connection.type);
         }
     
     // Subscribe to network state updates
@@ -33,13 +35,13 @@ export default function NetworkStatus({children}) {
     }, []);
 
     // Only show message when not connected
-    if (connected === 'none' || connected === 'unknown') {
+    if (connectionType === 'none' || connectionType === 'unknown') {
         return (
         <View style={styles.networkStatusContainer}>
             <Text style={styles.networkStatusText}>{connected}</Text>
         </View>
         );
     } else {
-        return children || null;
+        return children;
     }
 }

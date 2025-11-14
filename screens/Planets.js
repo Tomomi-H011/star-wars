@@ -18,7 +18,7 @@ export default function Planets() {
     <View style={{ flex: 1 }}>
       <Background>
         <SafeAreaView style={styles.container}>
-          <StatusBar style="auto" />
+          <StatusBar style="light" />
           <SearchBox />
           <ListContainer apiEndpoint="planets" />
       </SafeAreaView>
