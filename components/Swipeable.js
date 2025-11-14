@@ -85,7 +85,7 @@ export default function Swipeable({ onSwipe, displayText }) {
     if (e.nativeEvent.contentOffset.x >= 200) {
       setModalVisible(true);
       onSwipe && onSwipe(); // Call the passed onSwipe callback if provided
-      scrollViewRef.current?.scrollTo({ x: 0, animated: true });
+      // scrollViewRef.current?.scrollTo({ x: 0, animated: true });
     }
   }
 
