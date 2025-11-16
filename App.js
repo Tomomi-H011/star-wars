@@ -9,7 +9,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Planets from "./screens/Planets";
 import Films from "./screens/Films";
-import Spaceships from "./screens/Spaceships";
+import Starships from "./screens/Starships";
 import LogoHeader from "./components/LogoHeader";
 import styles from "./styles";
 import Background from "./components/Background";
@@ -69,7 +69,7 @@ export default function App() {
               else if (route.name === 'Films') {
                 iconName = focused ? 'film' : 'film-outline';
               }
-              else if (route.name === 'Spaceships') {
+              else if (route.name === 'Starships') {
                 iconName = focused ? 'rocket' : 'rocket-outline';
               }
               return <Ionicons name={iconName} size={size} color={color} />;
@@ -78,7 +78,7 @@ export default function App() {
         >
           <Tab.Screen name="Planets" component={Planets} />
           <Tab.Screen name="Films" component={Films} />
-          <Tab.Screen name="Spaceships" component={Spaceships} />
+          <Tab.Screen name="Starships" component={Starships} />
         </Tab.Navigator>  
       </NavigationContainer>
       </NetworkStatus>
