@@ -7,7 +7,7 @@ import {Text, FlatList, View, ActivityIndicator, ScrollView} from "react-native"
 import Swipeable from "./Swipeable";
 import styles from "../styles";
 
-export default function List({data, fetchData, loading, error}) {
+export default function List({data, handleSwipe, fetchData, loading, error}) {
     if (loading) {
         return <ActivityIndicator size="large" color="#0000ff" />;
     }
@@ -19,12 +19,12 @@ export default function List({data, fetchData, loading, error}) {
             <FlatList style={styles.list}
                 contentContainerStyle={styles.listContent}
                 data={data}
-                renderItem={({item}) => (
-                    <Swipeable 
-                        displayText={item.name || item.properties?.title}
-                        onSwipe={() => {}}
-                    />
-                )}
+                    renderItem={({item}) => (
+                        <Swipeable 
+                            displayText={item.name || item.properties?.title}
+                            onSwipe={() => handleSwipe(item)}
+                        />
+                    )}
                 keyExtractor={(item) => item.url || item.properties?.url}
             />
         </ScrollView>

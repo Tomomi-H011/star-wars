@@ -7,20 +7,24 @@ import {Text, Platform, View, ImageBackground} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Planets from "./screens/Planets";
-import Films from "./screens/Films";
-import Spaceships from "./screens/Spaceships";
-import LogoHeader from "./components/LogoHeader";
-import styles from "./styles";
-import Background from "./components/Background";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 import { useFonts } from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import NetworkStatus from "./components/NetworkStatus";
+import Planets from "./screens/Planets";
+import Details from "./screens/Details";
+import Films from "./screens/Films";
+import Starships from "./screens/Starships";
+import LogoHeader from "./components/LogoHeader";
+import styles from "./styles";
+import Background from "./components/Background";
 
 
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
+const PlanetStack = createNativeStackNavigator();
 
 // Display header logo and title
 function CustomHeader({ route, options }) {
@@ -34,6 +38,57 @@ function CustomHeader({ route, options }) {
   );
 }
 
+// Stack Navigator to navigate between main screens and Details screen
+function PlanetNavigationStack() {
+  return (
+    <PlanetStack.Navigator
+      screenOptions={{ headerShown: false }}
+    >
+      <PlanetStack.Screen 
+        name="PlanetsMain"
+        component={Planets}
+      />
+      <PlanetStack.Screen
+        name="Details"
+        component={Details}
+        options={({ route }) => ({ title: route.params.name })} />
+    </PlanetStack.Navigator>
+  );
+}
+
+function StarshipNavigationStack() {
+  return (
+    <PlanetStack.Navigator
+      screenOptions={{ headerShown: false }}
+    >
+      <PlanetStack.Screen 
+        name="StarshipsMain"
+        component={Starships}
+      />
+      <PlanetStack.Screen
+        name="Details"
+        component={Details}
+        options={({ route }) => ({ title: route.params.name })} />
+    </PlanetStack.Navigator>
+  );
+}
+
+function FilmNavigationStack() {
+  return (
+    <PlanetStack.Navigator
+      screenOptions={{ headerShown: false }}
+    >
+      <PlanetStack.Screen 
+        name="FilmsMain"
+        component={Films}
+      />
+      <PlanetStack.Screen
+        name="Details"
+        component={Details}
+        options={({ route }) => ({ title: route.params.title })} />
+    </PlanetStack.Navigator>
+  );
+}
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -69,16 +124,28 @@ export default function App() {
               else if (route.name === 'Films') {
                 iconName = focused ? 'film' : 'film-outline';
               }
-              else if (route.name === 'Spaceships') {
+              else if (route.name === 'Starships') {
                 iconName = focused ? 'rocket' : 'rocket-outline';
               }
               return <Ionicons name={iconName} size={size} color={color} />;
             }
           })}
         >
-          <Tab.Screen name="Planets" component={Planets} />
-          <Tab.Screen name="Films" component={Films} />
-          <Tab.Screen name="Spaceships" component={Spaceships} />
+          <Tab.Screen 
+            name="Planets" 
+            component={PlanetNavigationStack}
+            options={{ headerShown: true }}
+          />
+          <Tab.Screen 
+            name="Films" 
+            component={FilmNavigationStack}
+            options={{ headerShown: true}} 
+          />
+          <Tab.Screen 
+            name="Starships" 
+            component={StarshipNavigationStack}
+            options={{ headerShown: true }}
+          />
         </Tab.Navigator>  
       </NavigationContainer>
       </NetworkStatus>

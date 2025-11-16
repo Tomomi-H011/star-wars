@@ -165,5 +165,37 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 60,
     marginHorizontal: 35,
-  }
-});
+  },
+  detailsContainer: {
+    flex: 1,
+    width: '90%',
+    backgroundColor: 'black',
+    opacity: 0.8,
+    marginTop: 40,
+  },
+  detailsTitle: {
+    fontFamily: 'Orbitron',
+    backgroundColor: 'transparent',
+    fontSize: 28,
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
+    color: 'silver',
+    marginBottom: 15,
+  },
+  detailsText: {
+    fontFamily: 'Orbitron',
+    backgroundColor: 'transparent',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'silver',
+    marginBottom: 15,
+    marginStart: 10,
+  },
+  backNavigation: { 
+    width: '100%', 
+    height:20, 
+    alignItems: 'flex-start',
+    marginTop:5, 
+    marginLeft:15,
+   },
+  });

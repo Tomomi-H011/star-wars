@@ -1,4 +1,4 @@
-// Spaceships.js
+// Starships.js
 
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
@@ -9,14 +9,14 @@ import SearchBox from "../components/SearchBox";
 import ListContainer from "../components/ListContainer";
 import Background from "../components/Background";
 
-export default function Spaceships() {
+export default function Starships() {
   return (
     <View style={{ flex: 1 }}>
       <Background>
         <SafeAreaView style={styles.container}>
           <StatusBar style="light" />
           <SearchBox />
-          <ListContainer apiEndpoint="starships/" />
+          <ListContainer apiEndpoint="starships" />
         </SafeAreaView>
       </Background>
     </View>
