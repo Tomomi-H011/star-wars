@@ -6,7 +6,7 @@ import React from "react";
 import styles from "../styles";
 import ListContainer from "../ListContainer";
 
-export default function Spaceships() {
+export default function Starships() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
