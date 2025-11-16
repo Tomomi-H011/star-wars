@@ -43,7 +43,7 @@ export default function Details({ route }) {
       }
     }
     fetchDetailsData();
-  }, [apiEndpoint, uid]);
+  }, [apiEndpoint, uid, url]);
 
   if (loading) {
     return (
