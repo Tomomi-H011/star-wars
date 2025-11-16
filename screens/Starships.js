@@ -8,7 +8,7 @@ import styles from "../styles";
 import SearchBox from "../components/SearchBox";
 import ListContainer from "../components/ListContainer";
 
-export default function Spaceships() {
+export default function Starships() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
