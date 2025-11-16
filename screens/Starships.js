@@ -9,7 +9,7 @@ import SearchBox from "../components/SearchBox";
 import ListContainer from "../components/ListContainer";
 import Background from "../components/Background";
 
-export default function Spaceships() {
+export default function Starships() {
   return (
     <View style={{ flex: 1 }}>
       <Background>
