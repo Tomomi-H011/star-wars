@@ -193,7 +193,7 @@ export default StyleSheet.create({
   },
   backNavigation: { 
     width: '100%', 
-    height:20, 
+    height:25, 
     alignItems: 'flex-start',
     marginTop:5, 
     marginLeft:15,
