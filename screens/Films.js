@@ -15,7 +15,6 @@ export default function Films() {
       <Background>
         <SafeAreaView style={styles.container}>
           <StatusBar style="light" />
-          <SearchBox />
           <ListContainer apiEndpoint="films" />
         </SafeAreaView>
       </Background>

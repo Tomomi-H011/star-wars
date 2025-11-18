@@ -2,15 +2,20 @@
 // Fetches data from Star Wars API and passes it to List component
 
 import React, {useState, useEffect} from 'react';
+import { View, Text, Modal, Button } from 'react-native';
 import List from './List';
 import { useNavigation } from '@react-navigation/native';
 import { func } from 'prop-types';
+import styles from '../styles';
+import SearchBox from './SearchBox';
 
 
 export default function ListContainer({apiEndpoint}) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [filterText, setFilterText] = useState('');
+    const [modalVisible, setModalVisible] = useState(true);
     const baseUrl = 'https://swapi.tech/api/';
 
     // For handing navigation between main and details screens
@@ -43,11 +48,45 @@ export default function ListContainer({apiEndpoint}) {
         });
     }
 
+    // Filter function for the search box based on name or title.
+    // If filterText is empty when user hits enter, show all items.
+    const filteredData = data.filter(item => {
+            const itemName = item.name || item.properties?.title || '';
+            return itemName.toLowerCase().includes(filterText.toLowerCase());
+        });
+
+    // Reset modal state
+    useEffect(() => {
+    if (filteredData.length === 0 && data.length > 0) {
+        setModalVisible(true);
+    }
+    }, [filterText, filteredData, data]);
+
+    // Display a list. Trigger filter only when user hits enter in the search box
     return (
-        <List data={data}
+        <>
+        <SearchBox onEnter={setFilterText} />
+        <List data={filteredData}
         loading={loading}
         error={error}
         handleSwipe={handleSwipe}   
         />
+
+        {/* Show a modal dialog when filter does not return a match */}
+        {filteredData.length === 0 && data.length > 0 && (
+            <Modal visible={modalVisible} transparent={true}>
+                <View style={styles.modalContainer}>
+                    <Text style={styles.modalText}>No match for: {filterText}</Text>
+                    <Button 
+                    style={styles.modalButton}
+                    title="Close" 
+                    onPress={() => {
+                        setModalVisible(false); 
+                        setFilterText('');}} 
+                    />
+                </View>
+            </Modal>
+            )}
+        </>
     );
 }

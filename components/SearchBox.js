@@ -5,32 +5,21 @@ import React, {useState} from 'react';
 import { View, Text, TextInput, Modal, Button, StyleSheet } from 'react-native';
 import styles from '../styles';
 
-export default function SearchBox() {
+export default function SearchBox({onEnter}) {
 
-  const [filter, setFilter] = useState('');
-  const [modalVisible, setModalVisible] = useState(false);
+  const [filterText, setFilterText] = useState('');
+
   
   return (
     <View style={styles.searchBoxContainer}>
       <TextInput 
-        style={styles.searchInput} 
+        style={styles.searchInput}
+        value={filterText}
         placeholder="Search..."
         placeholderTextColor={'silver'}
-        onChangeText={setFilter}
-        onSubmitEditing={() => setModalVisible(true)}
+        onChangeText={setFilterText}
+        onSubmitEditing={() => onEnter(filterText)}
       />
-
-      {/* Show a modal dialog when submitting search text */}
-      <Modal visible={modalVisible} transparent={true}>
-        <View style={styles.modalContainer}>
-          <Text style={styles.modalText}>Search for: {filter}</Text>
-          <Button 
-            style={styles.modalButton}
-            title="Close" 
-            onPress={() => setModalVisible(false)} 
-          />
-        </View>
-      </Modal>
     </View>
   )
 }

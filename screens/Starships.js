@@ -15,7 +15,6 @@ export default function Starships() {
       <Background>
         <SafeAreaView style={styles.container}>
           <StatusBar style="light" />
-          <SearchBox />
           <ListContainer apiEndpoint="starships" />
         </SafeAreaView>
       </Background>
