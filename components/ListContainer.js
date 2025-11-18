@@ -4,7 +4,7 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, Modal, Button } from 'react-native';
 import List from './List';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { func } from 'prop-types';
 import styles from '../styles';
 import SearchBox from './SearchBox';
@@ -21,7 +21,7 @@ export default function ListContainer({apiEndpoint}) {
     // For handing navigation between main and details screens
     const navigation = useNavigation();
 
-    useEffect(() => {
+    useFocusEffect(() => {
         // Define an async function to fetch data for main screens
         async function fetchData() {
             try {
