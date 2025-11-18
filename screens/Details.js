@@ -73,8 +73,8 @@ export default function Details({ route }) {
               onPress={() => navigation.goBack()} 
               style={{ flexDirection: 'row', alignItems: 'center' }}
             >
-              <Ionicons name="arrow-back" size={28} color="silver" />
-              <Text style={{ color: 'silver', fontSize: 18, marginLeft: 8 }}>Back</Text>
+              <Ionicons name="arrow-back" size={34} color="silver" />
+              <Text style={{ color: 'silver', fontSize: 24, marginLeft: 8 }}>Back</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.detailsContainer}>

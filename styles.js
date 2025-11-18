@@ -171,11 +171,12 @@ export default StyleSheet.create({
     width: '90%',
     backgroundColor: 'black',
     opacity: 0.8,
-    marginTop: 40,
+    marginTop: 0,
   },
   detailsTitle: {
     fontFamily: 'Orbitron',
-    backgroundColor: 'transparent',
+    backgroundColor: 'black',
+    opacity: 0.8,
     fontSize: 28,
     fontWeight: 'bold',
     textDecorationLine: 'underline',
@@ -193,9 +194,11 @@ export default StyleSheet.create({
   },
   backNavigation: { 
     width: '100%', 
-    height:25, 
+    height:55, 
     alignItems: 'flex-start',
-    marginTop:5, 
+    paddingBottom:25,
     marginLeft:15,
+    backgroundColor: 'black',
+    opacity: 0.8,
    },
   });
