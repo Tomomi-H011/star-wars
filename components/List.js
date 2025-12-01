@@ -16,17 +16,13 @@ export default function List({data, fetchData, loading, error}) {
     }
     return (
         <ScrollView style={styles.scroll}>
-            <FlatList style={styles.list}
-                contentContainerStyle={styles.listContent}
-                data={data}
-                renderItem={({item}) => (
-                    <Swipeable 
-                        displayText={item.name || item.properties?.title}
-                        onSwipe={() => {}}
-                    />
-                )}
-                keyExtractor={(item) => item.url || item.properties?.url}
-            />
+            {data.map(item => (
+                <Swipeable
+                key={item.url || item.properties?.url}
+                displayText={item.name || item.properties?.title}
+                onSwipe={() => {}}
+                />
+            ))}
         </ScrollView>
     );
 }
