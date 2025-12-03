@@ -15,7 +15,7 @@ export default function List({data, handleSwipe, fetchData, loading, error}) {
         return <Text>Error: {error}</Text>;
     }
     return (
-        <ScrollView style={styles.scroll}>
+
             <FlatList style={styles.list}
                 contentContainerStyle={styles.listContent}
                 data={data}
@@ -27,6 +27,6 @@ export default function List({data, handleSwipe, fetchData, loading, error}) {
                     )}
                 keyExtractor={(item) => item.url || item.properties?.url}
             />
-        </ScrollView>
+
     );
 }
