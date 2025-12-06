@@ -38,11 +38,11 @@ export default function Swipeable({ onSwipe, displayText }) {
       }
     }
 
-    //Trigger onSwipe on pointer up if dragged more than 100px
+    //Trigger onSwipe on pointer up if dragged more than 5px
     function handlePointerUp(e) {
       if (dragState.current.dragging) {
         const deltaX = dragState.current.lastX - dragState.current.startX;
-        if (Math.abs(deltaX) > 100) {
+        if (Math.abs(deltaX) > 5) {
           onSwipe && onSwipe();
         }
         dragState.current.dragging = false;
