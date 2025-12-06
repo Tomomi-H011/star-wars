@@ -16,8 +16,39 @@ import Animated,
 
 
 export default function Swipeable({ onSwipe, displayText }) {
-  const [modalVisible, setModalVisible] = useState(false);
-  const scrollViewRef = useRef(null);
+    
+    const [modalVisible, setModalVisible] = useState(false);
+    const scrollViewRef = useRef(null);
+
+    // Web drag state
+    const dragState = useRef({ dragging: false, startX: 0, lastX: 0 });
+
+    // Web drag handlers (Get start and end positions)
+    function handlePointerDown(e) {
+      if (e.nativeEvent && e.nativeEvent.pointerType === 'mouse' || e.nativeEvent.pointerType === 'touch') {
+        dragState.current.dragging = true;
+        dragState.current.startX = e.nativeEvent.pageX;
+        dragState.current.lastX = e.nativeEvent.pageX;
+      }
+    }
+
+    function handlePointerMove(e) {
+      if (dragState.current.dragging) {
+        dragState.current.lastX = e.nativeEvent.pageX;
+      }
+    }
+
+    //Trigger onSwipe on pointer up if dragged more than 100px
+    function handlePointerUp(e) {
+      if (dragState.current.dragging) {
+        const deltaX = dragState.current.lastX - dragState.current.startX;
+        if (Math.abs(deltaX) > 100) {
+          onSwipe && onSwipe();
+        }
+        dragState.current.dragging = false;
+      }
+    }
+
   
   // Override & animate TouchableOpacity's styles
   const borderColor = useSharedValue(0);
@@ -92,6 +123,10 @@ export default function Swipeable({ onSwipe, displayText }) {
           onLongPress={handleLongPress}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          // Web drag events for Expo Web
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
         >
           <Animated.View 
             entering={SlideInRight}
