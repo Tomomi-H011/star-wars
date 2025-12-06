@@ -19,6 +19,7 @@ import Starships from "./screens/Starships";
 import LogoHeader from "./components/LogoHeader";
 import styles from "./styles";
 import Background from "./components/Background";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
 
@@ -100,56 +101,58 @@ export default function App() {
   }
 
   return (
-    <Background>
-      <NetworkStatus>
-      <NavigationContainer style={styles.NavigationContainer}>
-        <Tab.Navigator
-          screenOptions={({ route }) => ({
-            header: (props) => <CustomHeader {...props} />, // Display logo header above title & nav
-            headerStyle: { backgroundColor: 'transparent' },
-            headerTitleStyle: { color: 'silver', padding: 15 },
-            tabBarStyle: {
-              backgroundColor: 'transparent',
-              borderWidth: 0,
-              elevation: 0,
-              boxShadow: 'none',
-            },
-            tabBarActiveTintColor: 'silver',
-            tabBarInactiveTintColor: 'gray',
-            tabBarIcon: ({focused, color, size}) => {
-              let iconName;
-              if (route.name === 'Planets') {
-                iconName = focused ? 'planet' : 'planet-outline';
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Background>
+        <NetworkStatus>
+        <NavigationContainer style={styles.NavigationContainer}>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              header: (props) => <CustomHeader {...props} />, // Display logo header above title & nav
+              headerStyle: { backgroundColor: 'transparent' },
+              headerTitleStyle: { color: 'silver', padding: 15 },
+              tabBarStyle: {
+                backgroundColor: 'transparent',
+                borderWidth: 0,
+                elevation: 0,
+                boxShadow: 'none',
+              },
+              tabBarActiveTintColor: 'silver',
+              tabBarInactiveTintColor: 'gray',
+              tabBarIcon: ({focused, color, size}) => {
+                let iconName;
+                if (route.name === 'Planets') {
+                  iconName = focused ? 'planet' : 'planet-outline';
+                }
+                else if (route.name === 'Films') {
+                  iconName = focused ? 'film' : 'film-outline';
+                }
+                else if (route.name === 'Starships') {
+                  iconName = focused ? 'rocket' : 'rocket-outline';
+                }
+                return <Ionicons name={iconName} size={size} color={color} />;
               }
-              else if (route.name === 'Films') {
-                iconName = focused ? 'film' : 'film-outline';
-              }
-              else if (route.name === 'Starships') {
-                iconName = focused ? 'rocket' : 'rocket-outline';
-              }
-              return <Ionicons name={iconName} size={size} color={color} />;
-            }
-          })}
-        >
-          <Tab.Screen 
-            name="Planets" 
-            component={PlanetNavigationStack}
-            options={{ headerShown: true }}
-          />
-          <Tab.Screen 
-            name="Films" 
-            component={FilmNavigationStack}
-            options={{ headerShown: true}} 
-          />
-          <Tab.Screen 
-            name="Starships" 
-            component={StarshipNavigationStack}
-            options={{ headerShown: true }}
-          />
-        </Tab.Navigator>  
-      </NavigationContainer>
-      </NetworkStatus>
-    </Background>
+            })}
+          >
+            <Tab.Screen 
+              name="Planets" 
+              component={PlanetNavigationStack}
+              options={{ headerShown: true }}
+            />
+            <Tab.Screen 
+              name="Films" 
+              component={FilmNavigationStack}
+              options={{ headerShown: true}} 
+            />
+            <Tab.Screen 
+              name="Starships" 
+              component={StarshipNavigationStack}
+              options={{ headerShown: true }}
+            />
+          </Tab.Navigator>  
+        </NavigationContainer>
+        </NetworkStatus>
+      </Background>
+    </GestureHandlerRootView>
   );
 }
 
